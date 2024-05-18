@@ -2,15 +2,16 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 
+const url = "http://localhost:3001";
 app.use(
     cors({
-        origin : "http://localhost:3001" ,
+        origin : url,
     })
 )
 
 app.get("/api",(req,res)=>{
     res.json(
-       [ {name:"johnny",age:15},{name:"ben",age:26}]
+       [{key:0,name:"johnny",age:15},{key:1,name:"ben",age:26}]
       
     )
 })
