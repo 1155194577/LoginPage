@@ -1,10 +1,14 @@
 import React from 'react'
+import Datafetching from './datafetching'
+import { QueryClient,QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient()  //
 
 function App() {
   return (
-    <div>
-      testing
-    </div>
+    <QueryClientProvider client={queryClient}>   
+    <Datafetching/>
+    </QueryClientProvider>
   )
 }
 
