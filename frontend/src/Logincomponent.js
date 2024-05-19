@@ -3,7 +3,8 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import {Context} from "./App"
 import Datafetching from './datafetching';
-
+import axios from 'axios';
+import { useMutation } from 'react-query';
 const CheckCorrectness = (username,pw) => {
     console.log("Now check correctness");
 }
@@ -11,20 +12,30 @@ const CheckCorrectness = (username,pw) => {
 export const Context1 = React.createContext();
 
 function Logincomponent() {
+    const api = "http://localhost:5001/postdata"; 
     const [IsLoggedin,SetIsLoggedin] = useContext(Context)
     const [Username,SetUsername] = useState([{}])
     const [Userpassword,SetUserpassword] = useState([{}])
 
-    useEffect(
-        ()=>{console.log(Username,Userpassword)} ,
-        [Username,Userpassword]
-    )
+    const handlesumbit = () => {
+        console.log("test")
+        axios.post(api, {
+            "Username" : Username,
+            "Userpassword" : Userpassword
+          })
+          .then(function (response) {
+            console.log("here",response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    }
 
   return (
     <div>
     <TextField id="outlined-basic" label="Username" variant="outlined" onChange={(event)=>{SetUsername(event.target.value)}}/>
     <TextField id="outlined-basic" label="Password" variant="outlined" onChange={(event)=>{SetUserpassword(event.target.value)}}/>
-    <Button variant="contained" onClick={()=>{CheckCorrectness("test","test")}}>Login</Button>
+    <Button variant="contained" onClick={handlesumbit}>Login</Button>
     <Datafetching/>
     </div>
   )

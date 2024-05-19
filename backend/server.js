@@ -4,11 +4,18 @@ const cors = require("cors")
 const  mysql =require("mysql2")
 
 const url = "http://localhost:3001";
+app.use(express.json())
+
 app.use(
     cors({
         origin : url,
     })
 )
+
+app.post("/postdata",(req,res)=>{
+    console.log(req.body)   
+    res.send("posted to server"); 
+})
 
 var con = mysql.createConnection(
     {
@@ -39,3 +46,4 @@ app.listen(5001,()=>{
     console.log("listening on 5001!"); 
 })
 
+// POST /login gets urlencoded bodies
