@@ -2,10 +2,10 @@ import React,{useContext} from 'react'
 import {useQuery} from 'react-query'
 import axios from 'axios'
 import {Context} from "./App"
+import {Context1} from "./Logincomponent"
 function Datafetching() {
-
     const [IsLoggedin,SetIsLoggedin] = useContext(Context)
-    console.log("ter",IsLoggedin)
+    const [Database,Setdatabase] = useContext(Context1)
     const {isLoading,data} = useQuery('datakey',()=>{
         return axios.get("http://localhost:5001/api")
       })
@@ -15,6 +15,8 @@ function Datafetching() {
       }
       console.log(data);
       const arr = data["data"];
+
+
   return (
     <div>
        { arr.map( 
