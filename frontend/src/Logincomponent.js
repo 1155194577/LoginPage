@@ -14,7 +14,6 @@ function Logincomponent() {
     const [IsLoggedin,SetIsLoggedin] = useContext(Context)
     const [Username,SetUsername] = useState([{}])
     const [Userpassword,SetUserpassword] = useState([{}])
-    const [Database,Setdatabase] = useState(["dsds"])
 
     useEffect(
         ()=>{console.log(Username,Userpassword)} ,
@@ -26,11 +25,7 @@ function Logincomponent() {
     <TextField id="outlined-basic" label="Username" variant="outlined" onChange={(event)=>{SetUsername(event.target.value)}}/>
     <TextField id="outlined-basic" label="Password" variant="outlined" onChange={(event)=>{SetUserpassword(event.target.value)}}/>
     <Button variant="contained" onClick={()=>{CheckCorrectness("test","test")}}>Login</Button>
-    
-    <Context1.Provider value={[Database,Setdatabase]}>
     <Datafetching/>
-    </Context1.Provider>
-
     </div>
   )
 }
