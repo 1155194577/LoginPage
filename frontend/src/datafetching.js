@@ -16,7 +16,7 @@ function Datafetching() {
   return (
     <div>
        { arr.map( 
-            (item) => (<div>{item.key},{item.name},{item.age}</div>)
+            (item) => (<div>{item.user_id},{item.user_name},{item.user_password}</div>)
         )}
     </div>
   )
