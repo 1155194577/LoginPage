@@ -1,9 +1,11 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {useQuery} from 'react-query'
 import axios from 'axios'
-
+import {Context} from "./App"
 function Datafetching() {
 
+    const [IsLoggedin,SetIsLoggedin] = useContext(Context)
+    console.log("ter",IsLoggedin)
     const {isLoading,data} = useQuery('datakey',()=>{
         return axios.get("http://localhost:5001/api")
       })
