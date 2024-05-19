@@ -18,3 +18,9 @@ function Logincomponent() {
 }
 
 export default Logincomponent
+
+
+//pass down the state isLoggedin in App.js to child component ,default as false
+//pass down the states Username and Userpassword as well
+// if the username and password matches those in databases 
+// change the isLoggedin to Тrue 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Datafetching from './datafetching'
 import { QueryClient,QueryClientProvider } from 'react-query'
 import Logincomponent from './Logincomponent'
@@ -6,9 +6,10 @@ import Logincomponent from './Logincomponent'
 const queryClient = new QueryClient()  //
 
 function App() {
+  const [IsLoggedin,SetIsLoggedin] = useState(true) 
   return (
     <QueryClientProvider client={queryClient}>   
-      <Logincomponent/>
+     { IsLoggedin ?  <Logincomponent/> : <div>test</div>}
     </QueryClientProvider>
   )
 }
