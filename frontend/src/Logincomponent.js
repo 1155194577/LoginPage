@@ -44,7 +44,6 @@ function Logincomponent() {
     <TextField className='boxes' id="username" label="Username" variant="outlined" onChange={(event)=>{SetUsername(event.target.value)}}/>
     <TextField className='boxes' id="password" label="Password" variant="outlined" onChange={(event)=>{SetUserpassword(event.target.value)}}/>
     <Button className='boxes' variant="contained" onClick={handlesumbit}>Login</Button>
-    <Database/>
     </div>
   )
 }
