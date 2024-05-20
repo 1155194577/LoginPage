@@ -1,0 +1,11 @@
+/*Center the loginBox in the center of the page*/
+.LoginBox {
+	justify-content : space-between; 
+	display : flex; 
+	flex-direction : column;
+	align-items : center; 
+}
+
+.box {
+	text-align : center; 
+}

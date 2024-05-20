@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import {Context} from "./App"
 import Datafetching from './datafetching';
 import axios from 'axios';
+import './Logincomponent.css'
 import { useMutation } from 'react-query';
 const CheckCorrectness = (username,pw) => {
     console.log("Now check correctness");
@@ -39,10 +40,10 @@ function Logincomponent() {
     }
 
   return (
-    <div>
-    <TextField id="outlined-basic" label="Username" variant="outlined" onChange={(event)=>{SetUsername(event.target.value)}}/>
-    <TextField id="outlined-basic" label="Password" variant="outlined" onChange={(event)=>{SetUserpassword(event.target.value)}}/>
-    <Button variant="contained" onClick={handlesumbit}>Login</Button>
+    <div className='LoginBox'>
+    <TextField className='boxes' id="username" label="Username" variant="outlined" onChange={(event)=>{SetUsername(event.target.value)}}/>
+    <TextField className='boxes' id="password" label="Password" variant="outlined" onChange={(event)=>{SetUserpassword(event.target.value)}}/>
+    <Button className='boxes' variant="contained" onClick={handlesumbit}>Login</Button>
     <Datafetching/>
     </div>
   )
