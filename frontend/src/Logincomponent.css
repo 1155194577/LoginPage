@@ -5,6 +5,8 @@
 	display : flex; 
 	flex-direction : column;
 	gap : 2rem;
+	top:30px;
+	position:relative; 
 }
 
 .boxes {
