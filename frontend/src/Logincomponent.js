@@ -10,11 +10,10 @@ const CheckCorrectness = (username,pw) => {
     console.log("Now check correctness");
 }
 
-export const Context1 = React.createContext();
 
 function Logincomponent() {
     const api = "http://localhost:5001/postdata"; 
-    const [IsLoggedin,SetIsLoggedin] = useContext(Context)
+    const [IsLoggedin,SetIsLoggedin,IsCheckingDataBase,SetIsCheckingDataBase] = useContext(Context)
     const [Username,SetUsername] = useState([{}])
     const [Userpassword,SetUserpassword] = useState([{}])
 

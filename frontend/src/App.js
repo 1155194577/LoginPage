@@ -9,10 +9,9 @@ function App() {
   const [IsLoggedin,SetIsLoggedin] = useState(false) 
   const [IsCheckingDataBase,SetIsCheckingDataBase] = useState(false)
   return (
-    <Context.Provider value={[IsLoggedin,SetIsLoggedin]}>
+    <Context.Provider value={[IsLoggedin,SetIsLoggedin,IsCheckingDataBase,SetIsCheckingDataBase]}>
     <QueryClientProvider client={queryClient}>   
     <Navbar/>
-     
      { IsLoggedin ?  <div>Logged in!</div> :  IsCheckingDataBase ?<Database/>:<Logincomponent/> }
     </QueryClientProvider>
     </Context.Provider>
