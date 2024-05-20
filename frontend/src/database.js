@@ -1,21 +1,17 @@
-import React,{useContext, useEffect} from 'react'
-import {useQuery} from 'react-query'
-import axios from 'axios'
-import {Context} from "./App"
-import {Context1} from "./Logincomponent"
-
+import React from 'react'
+import { useQuery } from 'react-query';
+import axios from 'axios';
 function DataFormatting(arr){
-  const kvpair = arr.reduce(
-    (obj,item) =>  {
-      obj[item.user_name]=item.user_password;
-      return obj; 
-    },[]
-  );
-    return kvpair; 
-}
-
-function Datafetching() {
-    const [IsLoggedin,SetIsLoggedin] = useContext(Context)
+    const kvpair = arr.reduce(
+      (obj,item) =>  {
+        obj[item.user_name]=item.user_password;
+        return obj; 
+      },[]
+    );
+      return kvpair; 
+  }
+  
+function Database() {
     const {isLoading,error,data} = useQuery('datakey',()=>{
         return axios.get("http://localhost:5001/api")
       });
@@ -40,5 +36,7 @@ function Datafetching() {
   )
 }
 
+export default Database
 
-export default Datafetching
+
+
