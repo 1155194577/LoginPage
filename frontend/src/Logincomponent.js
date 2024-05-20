@@ -24,7 +24,14 @@ function Logincomponent() {
             "Userpassword" : Userpassword
           })
           .then(function (response) {
-            console.log("here",response);
+            const IsCorrectUserNameAndPassword = response["data"]["Correct"]; 
+            if (IsCorrectUserNameAndPassword) {
+              console.log("correct!")
+              SetIsLoggedin(true)
+            }
+            else {
+              alert("Incorrect!")
+            }
           })
           .catch(function (error) {
             console.log(error);

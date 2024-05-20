@@ -6,11 +6,11 @@ import Logincomponent from './Logincomponent'
 const queryClient = new QueryClient()  //
 export const Context = React.createContext();
 function App() {
-  const [IsLoggedin,SetIsLoggedin] = useState(true) 
+  const [IsLoggedin,SetIsLoggedin] = useState(false) 
   return (
     <Context.Provider value={[IsLoggedin,SetIsLoggedin]}>
     <QueryClientProvider client={queryClient}>   
-     { IsLoggedin ?  <Logincomponent/> : <div>Logged in!</div>}
+     { IsLoggedin ?  <div>Logged in!</div> : <Logincomponent/>}
     </QueryClientProvider>
     </Context.Provider>
   )
